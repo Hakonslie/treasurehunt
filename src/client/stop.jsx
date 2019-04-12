@@ -1,17 +1,22 @@
 import React from "react";
+import Cookies from 'universal-cookie';
 
+
+const cookies = new Cookies();
 export class Stop extends React.Component {
+
+
     constructor(props) {
         super(props);
         this.state = ({
             loggedIn: false,
             key: this.props.match.params.stopid,
-            user: "Hakon",
             status: false
         });
-
         this.authenticateKey();
     }
+
+
 
     authenticateKey = async () => {
     let response = await fetch('/api/stop', {
@@ -21,20 +26,29 @@ export class Stop extends React.Component {
             },
             body: JSON.stringify({
                 "key": this.state.key,
-                "user": this.state.user})
+                "user": cookies.get('session')})
             })
             .then(response => response.json());
 
     this.setState({status: response.validatedAddress});
+    cookies.set('session', response.sessionId, {path: "/", httpOnly: true, expires: new Date("2019-04-21")});
 
     };
 
     render() {
+
+
+        if(cookies.get('session') === null) {
+            console.log('new user')
+
+
+        }
+
         return (
             <div>
                 {!this.state.status ? (
                     <div>
-                        <h2>{this.state.key}</h2>
+                        <div class="tooSoon">Du har funnet et stopp på en skattejakt, men for å aktivere dette må du finne det forrige stoppet først!</div>
                     </div>
                 ) : (
 

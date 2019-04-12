@@ -5,6 +5,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import {Stop} from "./stop";
 import {Home} from "./home";
 
+
 const notFound = () => {
     return (
         <div>
@@ -22,7 +23,7 @@ const App = ()  => {
             <div>
                     <Switch>
                         <Route exact path="/" component={Home}/>
-                        <Route exact path="/stop/:stopid" component={Stop}/>
+                        <Route exact path="/stop/:stopid" component={Stop} />
                         <Route component={notFound} />
                     </Switch>
             </div>
