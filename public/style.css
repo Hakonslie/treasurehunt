@@ -1,3 +1,12 @@
 .tooSoon {
 
 }
+
+.allowCookies {
+    width: 100%;
+    background-color: rgba(200,200,100,50);
+}
+.allowCookieClick {
+    text-decoration: underline;
+    cursor: pointer;
+}

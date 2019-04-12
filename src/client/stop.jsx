@@ -9,53 +9,82 @@ export class Stop extends React.Component {
     constructor(props) {
         super(props);
         this.state = ({
-            loggedIn: false,
             key: this.props.match.params.stopid,
-            status: false
+            validated: false,
+            acceptedCookie: false,
+            fetchedRiddle: undefined
         });
-        this.authenticateKey();
     }
 
-
-
     authenticateKey = async () => {
-    let response = await fetch('/api/stop', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                "key": this.state.key,
-                "user": cookies.get('session')})
+        let response = await fetch('/api/stop',
+            {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        "key": this.state.key,
+                        "user": cookies.get('session')
+                    })
             })
             .then(response => response.json());
 
-    this.setState({status: response.validatedAddress});
-    cookies.set('session', response.sessionId, {path: "/", httpOnly: true, expires: new Date("2019-04-21")});
-
+    this.setState({validated: response.validatedSuccess, fetchedRiddle: response.riddle});
+    cookies.set('session', response.sessionUser.sessionId);
     };
 
-    render() {
-
-
-        if(cookies.get('session') === null) {
-            console.log('new user')
-
-
+    checkIfDidAcceptCookie = () => {
+        let gotCookie = cookies.get('session');
+        if(gotCookie !== undefined) {
+            this.setState({acceptedCookie: true});
+            this.authenticateKey();
         }
+        else {
+            console.log('no cookie');
+        }
+    };
+    userAcceptsCookies = () => {
+        this.setState({acceptedCookie: true});
+        this.authenticateKey();
+    };
 
-        return (
-            <div>
-                {!this.state.status ? (
-                    <div>
-                        <div class="tooSoon">Du har funnet et stopp på en skattejakt, men for å aktivere dette må du finne det forrige stoppet først!</div>
+    componentDidMount() {
+        if(this.state.acceptedCookie) {this.authenticateKey()}
+        else this.checkIfDidAcceptCookie();
+
+    }
+
+    render() {
+        if(!this.state.acceptedCookie) {
+                return (
+                    <div className="allowCookies">
+                        I need to put a cookie in your browser in order to keep track of how you are doing in the QR-treasure hunt! will you allow it?
+                        No personal info is stored and DB will be wiped 21st of April.
+                        <div className="allowCookieClick" onClick={this.userAcceptsCookies}>Click me to allow cookies</div>
                     </div>
-                ) : (
-
-                <div> Du fant et stopp. Her kommer neste gåte </div>
-
-                    )}
-            </div>
-        )
+                )
+            }
+        else if(this.state.acceptedCookie)
+            {
+            return (
+                <div>
+                    {!this.state.validated ? (
+                        <div>
+                            <div className="tooSoon">Feil adresse! Finn riktig QR-kode! Eller gå til første stopp ;)</div>
+                        </div>
+                    ) : (
+                    <div> Du fant et stopp. Her kommer neste gåte! {this.state.fetchedRiddle} </div>
+                        )}
+                </div>
+            )
+        }
+        else {
+            return (
+                <div>
+                    can't figure out if you accepted cookies or not :(
+                </div>
+            )
+        }
     }
 }
