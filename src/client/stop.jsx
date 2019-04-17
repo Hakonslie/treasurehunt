@@ -31,7 +31,7 @@ export class Stop extends React.Component {
             .then(response => response.json());
 
     this.setState({validated: response.validatedSuccess, fetchedRiddle: response.riddle});
-    cookies.set('session', response.sessionUser.sessionId);
+    cookies.set('session', response.sessionUser.sessionId, { maxAge: 2 * 24 * 60 * 60 * 1000 });
     };
 
     checkIfDidAcceptCookie = () => {
