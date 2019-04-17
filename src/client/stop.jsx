@@ -40,9 +40,7 @@ export class Stop extends React.Component {
             this.setState({acceptedCookie: true});
             this.authenticateKey();
         }
-        else {
-            console.log('no cookie');
-        }
+        // No cookie
     };
     userAcceptsCookies = () => {
         this.setState({acceptedCookie: true});

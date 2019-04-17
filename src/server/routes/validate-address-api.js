@@ -16,7 +16,9 @@ const stopsArray = [
     new Stop("NHHt6LAcHr6mFaFB", "Riddle me this"),
     new Stop("847TqAvKdqEjZGad", "Fiddle my diddle"),
     new Stop("nJFERAsXRy724OaJ", "Waggle my doodle"),
-    new Stop("9WgB4EjvXv7D1 oOA", "Noodle my that"),
+    new Stop("8394L4UpRB0uHE84", "Noodle my that"),
+    new Stop("tL25WSe35toTGBGg", "Noodle my that"),
+    new Stop("uolbzEn3C9i9oKVC", "Noodle my that"),
     new Stop("28J23g2FC4MXLoRe", "Top of my hat")
 ];
 
