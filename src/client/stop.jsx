@@ -58,7 +58,7 @@ export class Stop extends React.Component {
         if(!this.state.acceptedCookie) {
                 return (
                     <div className="allowCookies">
-                        Velkommen til TG skattejakt 2019 av Vipps, kom til vår stand om du lurer på noe.
+                        Velkommen til TG skattejakt 2019 av Vipps, kom til vår stand om du lurer på noe. Ops: Du får bare gåtene en gang!
                         <p>
                         Jeg vil gjerne legge en Cookie i nettleseren din for å huske på hvilke gåter du har løst. Lar du meg gjøre det?
                         <div className="allowCookieClick" onClick={this.userAcceptsCookies}>Trykk her for å tillate det</div>
