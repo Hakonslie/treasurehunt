@@ -68,7 +68,8 @@ export class Stop extends React.Component {
                 <div>
                     {!this.state.validated ? (
                         <div>
-                            <div className="tooSoon">Feil QR-kode! Du må gjennomføre ruten i riktig rekkefølge ;) Hvis du sitter fast kan du slette cookie-n i nettleseren og begynne på nytt!</div>
+                            <div className="tooSoon">Vipps, så ble det feil QR-kode! Du må gjennomføre ruten i riktig rekkefølge ;)  <br />
+                            Hvis du sitter fast kan du finne en vippser på Vipps-standen. Hvis du vil begynne på nytt kan du slette cookie-n i nettleseren</div>
                         </div>
                     ) : (
                     <div> Hurra! Du fant et stopp, her kommer neste gåte (Obs: Du får den kun en gang): {this.state.fetchedRiddle} </div>
