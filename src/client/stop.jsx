@@ -54,6 +54,7 @@ export class Stop extends React.Component {
     }
 
     render() {
+
         if(!this.state.acceptedCookie) {
                 return (
                     <div className="allowCookies">
@@ -68,11 +69,10 @@ export class Stop extends React.Component {
                 <div>
                     {!this.state.validated ? (
                         <div>
-                            <div className="tooSoon">Vipps, så ble det feil QR-kode! Du må gjennomføre ruten i riktig rekkefølge ;)  <br />
-                            Hvis du sitter fast kan du finne en vippser på Vipps-standen. Hvis du vil begynne på nytt kan du slette cookie-n i nettleseren</div>
+                            <div className="tooSoon"> Skattejakten må gjennomføres i riktig rekkefølge. Første stopp er Vipps-standen ;) </div>
                         </div>
                     ) : (
-                    <div> Hurra! Du fant et stopp, her kommer neste gåte (Obs: Du får den kun en gang): {this.state.fetchedRiddle} </div>
+                    <div> Hurra! Du fant et stopp, her kommer neste gåte(Obs: Du får den kun en gang): {this.state.fetchedRiddle} </div>
                         )}
                 </div>
             )
