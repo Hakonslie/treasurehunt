@@ -57,9 +57,8 @@ export class Stop extends React.Component {
         if(!this.state.acceptedCookie) {
                 return (
                     <div className="allowCookies">
-                        I need to put a cookie in your browser in order to keep track of how you are doing in the QR-treasure hunt! will you allow it?
-                        No personal info is stored and DB will be wiped 21st of April.
-                        <div className="allowCookieClick" onClick={this.userAcceptsCookies}>Click me to allow cookies</div>
+                        Vipps, så må jeg legge en Cookie (informasjonskapsel) i nettleseren din for å huske på hvilke gåter du har løst. Lar du meg gjøre det?
+                        <div className="allowCookieClick" onClick={this.userAcceptsCookies}>Trykk her for å tillate det</div>
                     </div>
                 )
             }
@@ -69,10 +68,10 @@ export class Stop extends React.Component {
                 <div>
                     {!this.state.validated ? (
                         <div>
-                            <div className="tooSoon">Feil adresse! Finn riktig QR-kode! Eller gå til første stopp ;)</div>
+                            <div className="tooSoon">Feil QR-kode! Du må gjennomføre ruten i riktig rekkefølge ;) Hvis du sitter fast kan du slette cookie-n i nettleseren og begynne på nytt!</div>
                         </div>
                     ) : (
-                    <div> Du fant et stopp. Her kommer neste gåte! {this.state.fetchedRiddle} </div>
+                    <div> Du fant et stopp!. Her kommer neste gåte! Du får den kun en gang{this.state.fetchedRiddle} </div>
                         )}
                 </div>
             )
@@ -80,7 +79,7 @@ export class Stop extends React.Component {
         else {
             return (
                 <div>
-                    can't figure out if you accepted cookies or not :(
+                    Noe gikk galt :( Kom og snakk med oss
                 </div>
             )
         }
