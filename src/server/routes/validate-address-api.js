@@ -17,7 +17,7 @@ const stopsArray = [
     new Stop("847TqAvKdqEjZGad", "I en stand på TG19 fra en instutisjon med en forkortelse som har like mange bokstaver som den mest brukte sniper-n i Counter-Strike. Siste bokstav er tredje bokstav i T sin startpistol"), //UIO
     new Stop("nJFERAsXRy724OaJ", "Jeg er på S-9"), //S9
     new Stop("8394L4UpRB0uHE84", "En av verdens beste League of Legends midlanere(?), han spiller for SK Telecom T1; ta vekk siste bokstav av nicket og lag ett anagram av resten for å finne neste stopp"), //Kafè-en
-    new Stop("tL25WSe35toTGBGg", "Level-up Norge er en stor norsk youtube kanal, det ble opprinnelig laget hos? Du finner en trapp ved siden av og der er neste stopp"), //VG-Bilen
+    new Stop("tL25WSe35toTGBGg", "Level-up Norge er en stor norsk youtube kanal, det ble opprinnelig laget hos? Du finner en trapp ved siden av der de holder til og neste stopp der"), //VG-Bilen
     new Stop("uolbzEn3C9i9oKVC", "Hvem har 3,3 millioner brukere i Norge og trenger utviklere og nysgjerrige kollegaer?"), // Vipps
     new Stop("28J23g2FC4MXLoRe", "Ingen flere gåter! Du nådde slutten. Gratulerer!")
 ];

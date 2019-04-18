@@ -76,7 +76,7 @@ export class Stop extends React.Component {
                         </div>
                     ) : (
                     <div> Hurra!
-                        <p>Du fant et stopp, her kommer neste gåte(du får den kun en gang ;))</p>
+                        <p>Du fant et stopp, her er gåten(du får den kun en gang ;))</p>
                         <p>"{this.state.fetchedRiddle}"</p>
                     </div>
 
