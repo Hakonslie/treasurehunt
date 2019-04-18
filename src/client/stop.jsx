@@ -75,7 +75,11 @@ export class Stop extends React.Component {
                             <div className="tooSoon"> Skattejakten må gjennomføres i riktig rekkefølge. Første stopp er Vipps-standen ;) </div>
                         </div>
                     ) : (
-                    <div> Hurra! Du fant et stopp, her kommer neste gåte(Obs: Du får den kun en gang): {this.state.fetchedRiddle} </div>
+                    <div> Hurra! 
+                        <p>Du fant et stopp, her kommer neste gåte(du får den kun en gang) {this.state.fetchedRiddle}
+                        </p>
+                    </div>
+
                         )}
                 </div>
             )
