@@ -1,11 +1,13 @@
 body {
     font-size: 100px;
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
+    background-color: #FF5B24;
+    color: white
 }
 
 .allowCookies {
     width: 100%;
-    background-color: rgba(200,200,100,50);
+    background-color: rgba(100,200,100,30);
 }
 .allowCookieClick {
     text-decoration: underline;

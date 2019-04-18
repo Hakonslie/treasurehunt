@@ -58,9 +58,11 @@ export class Stop extends React.Component {
         if(!this.state.acceptedCookie) {
                 return (
                     <div className="allowCookies">
-                        Velkommen til Vipps sin QR-skattejakt på tg 2019. Du kan vinne artige premier ;) Kom til vår stand om du har spørsmål
+                        Velkommen til TG skattejakt 2019 av Vipps, kom til vår stand om du lurer på noe.
+                        <p>
                         Jeg vil gjerne legge en Cookie i nettleseren din for å huske på hvilke gåter du har løst. Lar du meg gjøre det?
                         <div className="allowCookieClick" onClick={this.userAcceptsCookies}>Trykk her for å tillate det</div>
+                        </p>
                     </div>
                 )
             }
