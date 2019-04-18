@@ -71,7 +71,7 @@ export class Stop extends React.Component {
                             <div className="tooSoon">Feil QR-kode! Du må gjennomføre ruten i riktig rekkefølge ;) Hvis du sitter fast kan du slette cookie-n i nettleseren og begynne på nytt!</div>
                         </div>
                     ) : (
-                    <div> Du fant et stopp!. Her kommer neste gåte! Du får den kun en gang{this.state.fetchedRiddle} </div>
+                    <div> Hurra! Du fant et stopp, her kommer neste gåte (Obs: Du får den kun en gang): {this.state.fetchedRiddle} </div>
                         )}
                 </div>
             )
